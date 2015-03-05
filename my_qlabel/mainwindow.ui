@@ -62,6 +62,48 @@
      </rect>
     </property>
    </widget>
+   <widget class="QLineEdit" name="typeInput">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>610</y>
+      <width>113</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>610</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Type</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="subTypeButton">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>640</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Submit type</string>
+    </property>
+   </widget>
+   <zorder>lblPic</zorder>
+   <zorder>testButton</zorder>
+   <zorder>Coords</zorder>
+   <zorder>typeInput</zorder>
+   <zorder>subTypeButton</zorder>
+   <zorder>label</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

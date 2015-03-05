@@ -26,3 +26,7 @@ FORMS    += mainwindow.ui \
     form.ui
 
 DISTFILES +=
+
+IMAGES += images/map.png \
+
+OUTPUT += output/output.csv \

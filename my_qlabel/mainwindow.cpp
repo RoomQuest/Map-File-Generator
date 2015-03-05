@@ -9,13 +9,14 @@
 #include <QPoint>
 #include <QCursor>
 #include <QMouseEvent>
+#include <QTextStream>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap pix("C:/Users/Kyle/Documents/QT/RoomQuestBack/Image/JB3rdfloor.png");
+    QPixmap pix(QPixmap(qApp->applicationDirPath() + "/images/map.png"));
     ui->lblPic->setPixmap(pix);
     ui->testButton->setStyleSheet("QPushButton{background: transparent;}");
     qApp->installEventFilter(this);
@@ -34,6 +35,8 @@ void MainWindow::on_testButton_clicked()
 
     connect(this,SIGNAL(xSig(double)),form,SLOT(xOutput(double)));      //sends coordinates to form
     connect(this,SIGNAL(ySig(double)),form,SLOT(yOutput(double)));
+    connect(this,SIGNAL(type(QString)),form,SLOT(inputType(QString)));
+    emit type(typeIn);
     emit xSig(xCoord);
     emit ySig(yCoord);
 }
@@ -56,4 +59,18 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
 
   }
   return false;
+}
+
+void MainWindow::on_subTypeButton_clicked()
+{
+    QString x = ui->typeInput->text();
+    typeIn = ui->typeInput->text();
+    QFile file("d:/test/output.txt");
+    file.open(QIODevice::Append | QIODevice::Text);
+    QTextStream out(&file);
+
+    out << x << '\n';
+
+    file.close();
+
 }

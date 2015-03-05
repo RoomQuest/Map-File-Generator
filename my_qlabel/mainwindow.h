@@ -22,16 +22,20 @@ private slots:
     void onTextBoxReturnPressed();
 
 
+    void on_subTypeButton_clicked();
+
 signals:
     void newTextEntered(const QString &text);
     void xSig(const double &text);
     void ySig(const double &text);
+    void type(const QString &text);
 
 private:
     Ui::MainWindow *ui;
     Form *form;
     double xCoord;
     double yCoord;
+    QString typeIn;
 };
 
 #endif // MAINWINDOW_H

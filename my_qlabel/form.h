@@ -20,6 +20,7 @@ signals:
 public slots:
     void xOutput(double data);
     void yOutput(double data);
+    void inputType(QString data);
 
 private slots:
     void on_SubButton_clicked();

@@ -1,12 +1,12 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QMainWindow>
-#include <QHBoxLayout>
-#include <QLabel>
-#include <QMouseEvent>
 #include "mylabel.h"
 #include "form.h"
 #include <QObject>
+#include <QMouseEvent>
+#include <QLabel>
+#include <QHBoxLayout>
 
 int main(int argc, char *argv[])
 {

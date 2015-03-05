@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>179</width>
-    <height>344</height>
+    <height>451</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>10</x>
      <y>10</y>
      <width>161</width>
-     <height>321</height>
+     <height>421</height>
     </rect>
    </property>
    <property name="title">
@@ -31,7 +31,7 @@
       <x>10</x>
       <y>20</y>
       <width>139</width>
-      <height>278</height>
+      <height>324</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -95,6 +95,16 @@
      </item>
      <item>
       <widget class="QLabel" name="yformCoords"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelType"/>
      </item>
     </layout>
    </widget>
