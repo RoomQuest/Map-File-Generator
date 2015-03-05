@@ -24,6 +24,8 @@ private slots:
 
     void on_subTypeButton_clicked();
 
+    void on_openFile_clicked();
+
 signals:
     void newTextEntered(const QString &text);
     void xSig(const double &text);

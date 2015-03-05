@@ -15,12 +15,14 @@ TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
     mylabel.cpp \
-    form.cpp
+    form.cpp \
+    directory.cpp
 
 HEADERS  += \
     mainwindow.h \
     mylabel.h \
-    form.h
+    form.h \
+    directory.h
 
 FORMS    += mainwindow.ui \
     form.ui

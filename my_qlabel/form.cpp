@@ -6,6 +6,7 @@
 #include <QTextStream>
 #include <QListWidget>
 #include "mainwindow.h"
+#include "directory.h"
 
 
 Form::Form(QWidget *parent) : QMainWindow(parent) , ui(new Ui::Form)
@@ -42,12 +43,15 @@ void Form::on_SubButton_clicked()
         QString s = ui->labelType->text();
         //QString y = ui->ProfInput->text();
         //QString z = ui->DepartInput->text();
+        Directory t;
+        t.saveFile();
 
         //QFile file("d:/test/output.csv");
         QFile file(qApp->applicationDirPath() + "/output/output.csv");
          //   (QPixmap(qApp->applicationDirPath() + "/images/map.png"))
         file.open(QIODevice::Append | QIODevice::Text);
         QTextStream out(&file);
+
 
         out << x << "," << s << "," << v << "," << w <<'\n';
 

@@ -10,6 +10,7 @@
 #include <QCursor>
 #include <QMouseEvent>
 #include <QTextStream>
+#include "directory.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -32,6 +33,8 @@ void MainWindow::on_testButton_clicked()
 {
     form = new Form(this);
     form->show();
+    //Directory t;
+    //t.openfile;
 
     connect(this,SIGNAL(xSig(double)),form,SLOT(xOutput(double)));      //sends coordinates to form
     connect(this,SIGNAL(ySig(double)),form,SLOT(yOutput(double)));
@@ -72,5 +75,12 @@ void MainWindow::on_subTypeButton_clicked()
     out << x << '\n';
 
     file.close();
+
+}
+
+void MainWindow::on_openFile_clicked()
+{
+    Directory t;
+    t.openDir();
 
 }
