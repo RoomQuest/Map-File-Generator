@@ -20,10 +20,6 @@ public:
 private slots:
     void on_testButton_clicked();
     void onTextBoxReturnPressed();
-
-
-    void on_subTypeButton_clicked();
-
     void on_openFile_clicked();
 
 signals:
@@ -37,7 +33,7 @@ private:
     Form *form;
     double xCoord;
     double yCoord;
-    QString typeIn;
+    QString filename;
 };
 
 #endif // MAINWINDOW_H

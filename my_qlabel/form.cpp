@@ -40,20 +40,30 @@ void Form::on_SubButton_clicked()
         QString v = ui->xformCoords->text();
         QString w = ui->yformCoords->text();
         QString x = ui->ClassInput->text();
-        QString s = ui->labelType->text();
-        //QString y = ui->ProfInput->text();
-        //QString z = ui->DepartInput->text();
-        Directory t;
-        t.saveFile();
+        QString s = ui->typeInput->text();
+        QString y = ui->ProfInput->text();
+        QString z = ui->DepartInput->text();
+        QString a = ui->FloorInput->text();
+        //Directory t;
+        //t.saveFile();
 
-        //QFile file("d:/test/output.csv");
-        QFile file(qApp->applicationDirPath() + "/output/output.csv");
+        QFile file("d:/test/output.csv");                                      //For testing
+        //QFile file(qApp->applicationDirPath() + "/output/output.csv");           //Outputs to final execuatable folder
          //   (QPixmap(qApp->applicationDirPath() + "/images/map.png"))
         file.open(QIODevice::Append | QIODevice::Text);
         QTextStream out(&file);
 
+        if (x == NULL && z == NULL) {
+            out << y << "," << s << "," << a << "," << v << "," << w <<'\n';
+        }
+        else if (y == NULL && z == NULL ){
+            out << x << "," << s << "," << a << "," << v << "," << w <<'\n';
+        }
+        else if (x == NULL && y == NULL) {
+            out << z << "," << s << "," << a << "," << v << "," << w <<'\n';
+        }
 
-        out << x << "," << s << "," << v << "," << w <<'\n';
+        //out << x << "," << s << "," << v << "," << w <<'\n';
 
         // optional, as QFile destructor will already do it:
         file.close();

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>179</width>
-    <height>451</height>
+    <height>491</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>10</x>
      <y>10</y>
      <width>161</width>
-     <height>421</height>
+     <height>461</height>
     </rect>
    </property>
    <property name="title">
@@ -31,7 +31,7 @@
       <x>10</x>
       <y>20</y>
       <width>139</width>
-      <height>324</height>
+      <height>405</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -70,6 +70,26 @@
       <widget class="QLineEdit" name="DepartInput"/>
      </item>
      <item>
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Floor </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="FloorInput"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="typeInput"/>
+     </item>
+     <item>
       <widget class="QPushButton" name="SubButton">
        <property name="text">
         <string>Submit</string>
@@ -95,13 +115,6 @@
      </item>
      <item>
       <widget class="QLabel" name="yformCoords"/>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>Type</string>
-       </property>
-      </widget>
      </item>
      <item>
       <widget class="QLabel" name="labelType"/>
