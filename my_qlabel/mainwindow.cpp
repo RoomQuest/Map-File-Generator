@@ -12,7 +12,7 @@
 #include <QTextStream>
 #include "directory.h"
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent) :                                           //constructor
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -21,12 +21,12 @@ MainWindow::MainWindow(QWidget *parent) :
     qApp->installEventFilter(this);
 }
 
-MainWindow::~MainWindow()
+MainWindow::~MainWindow()                                                           //destuctor
 {
     delete ui;
 }
 
-void MainWindow::on_testButton_clicked()
+void MainWindow::on_testButton_clicked()                                            //creates the 2nd form and sends the coords to 2nd form
 {
     form = new Form(this);
     form->show();
@@ -40,12 +40,12 @@ void MainWindow::on_testButton_clicked()
     emit ySig(yCoord);
 }
 
-void MainWindow::onTextBoxReturnPressed()
+void MainWindow::onTextBoxReturnPressed()                                   //
 {
     emit this->newTextEntered(ui->Coords->text());
 }
 
-bool MainWindow::eventFilter(QObject *obj, QEvent *event)
+bool MainWindow::eventFilter(QObject *obj, QEvent *event)                   // tracks mouse coordinates
 {
   if (event->type() == QEvent::MouseMove)
   {
@@ -58,7 +58,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
   return false;
 }
 
-void MainWindow::on_openFile_clicked()
+void MainWindow::on_openFile_clicked()                                      //selection of the image
 {
     filename = QFileDialog::getOpenFileName(
                 this,

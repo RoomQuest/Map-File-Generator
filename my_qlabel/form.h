@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QString>
+#include <QFile>
 
 namespace Ui {
     class Form;
@@ -28,6 +29,7 @@ private slots:
 
 private:
      Ui::Form *ui;
+     //QFile filename;
 };
 
 #endif // FORM_H

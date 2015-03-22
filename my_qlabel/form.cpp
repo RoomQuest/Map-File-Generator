@@ -9,32 +9,32 @@
 #include "directory.h"
 
 
-Form::Form(QWidget *parent) : QMainWindow(parent) , ui(new Ui::Form)
+Form::Form(QWidget *parent) : QMainWindow(parent) , ui(new Ui::Form) // constructor
 {
     ui->setupUi(this);
 }
 
-Form::~Form()
+Form::~Form()                                                   // destructor
 {
     delete ui;
 }
 
-void Form::xOutput(double data)
+void Form::xOutput(double data)                                 // saves the X coordinates
 {
     ui->xformCoords->setText(QString::number(data, 10.0));
 }
 
-void Form::yOutput(double data)
+void Form::yOutput(double data)                                 // saves the Y coordinates
 {
     ui->yformCoords->setText(QString::number(data, 10.0));
 }
 
-void Form::inputType(QString data)
+void Form::inputType(QString data)                              // saves input type
 {
     ui->labelType->setText(QString().append(data));
 }
 
-void Form::on_SubButton_clicked()
+void Form::on_SubButton_clicked()                               // Asks for the to select the file and saves to the file
 {
 
         QString v = ui->xformCoords->text();
@@ -44,14 +44,21 @@ void Form::on_SubButton_clicked()
         QString y = ui->ProfInput->text();
         QString z = ui->DepartInput->text();
         QString a = ui->FloorInput->text();
-        //Directory t;
-        //t.saveFile();
 
-        QFile file("d:/test/output.csv");                                      //For testing
+        QFile filename(QFileDialog::getOpenFileName(
+                    this,
+                    tr("Open File"),
+                    QDir::currentPath(),
+                    tr("Doncuments (*.csv);;All files(*.*)")));
+        /*if(!filename.isNull()) {
+            qDebug(filename.toUtf8());
+        }*/
+
+        //QFile file("d:/test/output.csv");                                      //For testing
         //QFile file(qApp->applicationDirPath() + "/output/output.csv");           //Outputs to final execuatable folder
          //   (QPixmap(qApp->applicationDirPath() + "/images/map.png"))
-        file.open(QIODevice::Append | QIODevice::Text);
-        QTextStream out(&file);
+        filename.open(QIODevice::Append | QIODevice::Text);
+        QTextStream out(&filename);
 
         if (x == NULL && z == NULL) {
             out << y << "," << s << "," << a << "," << v << "," << w <<'\n';
@@ -66,7 +73,9 @@ void Form::on_SubButton_clicked()
         //out << x << "," << s << "," << v << "," << w <<'\n';
 
         // optional, as QFile destructor will already do it:
-        file.close();
+        filename.close();
+
+
 
         //this would normally start the event loop, but is not needed for this
         //minimal example:
@@ -78,7 +87,7 @@ void Form::on_SubButton_clicked()
         //JBH.util ----> name, utility
 }
 
-void Form::on_SubButton_released()
+void Form::on_SubButton_released() // closes the form
 {
    Form::close();
 }

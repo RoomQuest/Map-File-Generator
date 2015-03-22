@@ -12,7 +12,7 @@ Directory::~Directory()
 
 }
 
-void Directory::openfile()
+void Directory::openfile() //opens a file
 {
     QString filename = QFileDialog::getOpenFileName(
                 this,
@@ -24,7 +24,7 @@ void Directory::openfile()
     }
 }
 
-void Directory::openfiles()
+void Directory::openfiles() //opens multiple files
 {
     QStringList filenames = QFileDialog::getOpenFileNames(
                 this,
@@ -36,7 +36,7 @@ void Directory::openfiles()
     }
 }
 
-void Directory::openDir()
+void Directory::openDir() //opens a directory
 {
     QString dirname = QFileDialog::getExistingDirectory(
                 this,
@@ -47,13 +47,13 @@ void Directory::openDir()
     }
 }
 
-void Directory::saveFile()
+void Directory::saveFile() // saves a file
 {
     QString filename = QFileDialog::getSaveFileName(
                 this,
-                tr("Save Document"),
+                tr("Save Map File"),
                 QDir::currentPath(),
-                tr("Documents (*.csv)"));
+                tr("Map File (*.csv)"));
     if(!filename.isNull()) {
         qDebug(filename.toUtf8());
     }
